@@ -21,9 +21,9 @@ let ticketPrice = '';
 
 
 
-if (!isNaN(passengersAge) && !isNaN(distance) && !passengersAge == null && !distance == null) {
+if (!isNaN === passengersAge && !isNaN === distance) {
 
-
+    
     if (passengersAge >= 18 && passengersAge <= 65) {
         ticketPrice = (passengersAge * priceForDistance).toFixed(2);
     }
