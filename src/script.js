@@ -21,27 +21,27 @@ let ticketPrice = '';
 
 
 
-if (!isNaN === passengersAge && !isNaN === distance) {
-
+if (!isNaN(passengersAge) && !isNaN(distance) && passengersAge && distance) {
+    
     
     if (passengersAge >= 18 && passengersAge <= 65) {
         ticketPrice = (passengersAge * priceForDistance).toFixed(2);
-    }
-
-
+    } 
+    
+    
     else if (passengersAge <= 17) {
         ticketPrice = (((passengersAge * priceForDistance) * discountUnder) + (passengersAge * priceForDistance)).toFixed(2);
-    }
-
-
+    } 
+    
+    
     else if (passengersAge >= 66) {
         ticketPrice = (((passengersAge * priceForDistance) * discountOver) + (passengersAge * priceForDistance)).toFixed(2);
     }
 
 
-} else {
-    alert('Insert data. Numbers Only.');
+}   else {
+    alert('Insert data. Numbers Only.')
 }
 
 
-document.getElementById('result').innerHTML = ticketPrice; 
+document.getElementById('result').innerHTML = ticketPrice
