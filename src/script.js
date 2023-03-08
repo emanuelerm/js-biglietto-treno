@@ -21,27 +21,38 @@ let ticketPrice = '';
 
 
 
-if (!isNaN(passengersAge) && !isNaN(distance) && passengersAge && distance) {
-    
-    
+if (typeof passengersAge === "string" && passengersAge.trim() === "" && typeof distance === "string" && distance.trim() === "") {
+
+
+    alert('Data is missing. Insert Number Only.')
+
+
+} else if (!isNaN(passengersAge) && !isNaN(distance) && passengersAge && distance) {
+
+
     if (passengersAge >= 18 && passengersAge <= 65) {
         ticketPrice = (passengersAge * priceForDistance).toFixed(2);
-    } 
-    
-    
+    }
+
+
     else if (passengersAge <= 17) {
         ticketPrice = (((passengersAge * priceForDistance) * discountUnder) + (passengersAge * priceForDistance)).toFixed(2);
-    } 
-    
-    
+    }
+
+
     else if (passengersAge >= 66) {
         ticketPrice = (((passengersAge * priceForDistance) * discountOver) + (passengersAge * priceForDistance)).toFixed(2);
     }
 
-
-}   else {
+} else {
     alert('Insert data. Numbers Only.')
 }
+
+
+
+
+
+
 
 
 document.getElementById('result').innerHTML = ticketPrice
