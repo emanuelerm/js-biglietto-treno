@@ -7,8 +7,8 @@ va applicato uno sconto del 40% per gli over 65.
 L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 */
 
-let passengersAge = (prompt('Age'));
-let distance = (prompt('Distance'));
+let passengersAge = prompt('Age');
+let distance = prompt('Distance');
 
 
 const priceForKm = 0.21;
@@ -19,17 +19,29 @@ let priceForDistance = distance * priceForKm;
 
 let ticketPrice = '';
 
-if (!isNaN(passengersAge) && !isNaN(distance) && passengersAge && distance) {
+
+
+if (!isNaN(passengersAge) && !isNaN(distance) && !passengersAge == null && !distance == null) {
+
+
     if (passengersAge >= 18 && passengersAge <= 65) {
         ticketPrice = (passengersAge * priceForDistance).toFixed(2);
-    } else if (passengersAge <= 17) {
+    }
+
+
+    else if (passengersAge <= 17) {
         ticketPrice = (((passengersAge * priceForDistance) * discountUnder) + (passengersAge * priceForDistance)).toFixed(2);
-    } else if (passengersAge >= 66) {
+    }
+
+
+    else if (passengersAge >= 66) {
         ticketPrice = (((passengersAge * priceForDistance) * discountOver) + (passengersAge * priceForDistance)).toFixed(2);
     }
-}   else {
-    alert('Insert data. Numbers Only.')
+
+
+} else {
+    alert('Insert data. Numbers Only.');
 }
 
 
-document.getElementById('result').innerHTML = ticketPrice
+document.getElementById('result').innerHTML = ticketPrice; 
